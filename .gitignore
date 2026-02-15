@@ -27,6 +27,9 @@ scan-log.md
 .env
 *.env
 
+# Claude Code
+CLAUDE.md
+
 # OS
 .DS_Store
 Thumbs.db

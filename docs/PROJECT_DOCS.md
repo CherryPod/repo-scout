@@ -2,7 +2,7 @@
 
 ## Overview
 
-repo-scout is a CLI tool that scans GitHub repositories for suspicious code patterns before they're cloned to the machine. It automates the manual audit policy from the global CLAUDE.md — checking for red flags like install hooks, hardcoded credentials, obfuscated code, privilege escalation, and data exfiltration patterns.
+repo-scout is a CLI tool that scans GitHub repositories for suspicious code patterns before they're cloned to the machine. It checks for red flags like install hooks, hardcoded credentials, obfuscated code, privilege escalation, and data exfiltration patterns.
 
 Neither scan tier clones the repo. Quick scan uses the GitHub API only. Deep scan downloads a tarball to a temp directory, scans it, then deletes everything.
 
