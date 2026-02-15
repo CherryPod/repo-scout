@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Reports and scan log (generated output, not tracked)
+reports/*.md
+!reports/.gitkeep
+scan-log.md
+
+# Environment/secrets
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo-scout"
+version = "0.1.0"
+description = "Scan GitHub repos for suspicious code before cloning"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.28",
+    "python-dotenv>=1.0",
+]
+
+[tool.setuptools]
+py-modules = ["cli", "config", "github_api", "patterns", "report", "scan_log", "scanner", "utils"]
+
+[project.scripts]
+repo-scout = "cli:main"
