@@ -6,14 +6,44 @@ build-backend = "setuptools.build_meta"
 name = "repo-scout"
 version = "0.1.0"
 description = "Scan GitHub repos for suspicious code before cloning"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
+authors = [
+    { name = "CherryPod" },
+]
+keywords = ["security", "github", "supply-chain", "scanner", "audit"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+]
 dependencies = [
     "requests>=2.28",
     "python-dotenv>=1.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/cherrypod/repo-scout"
+Repository = "https://github.com/cherrypod/repo-scout"
+Issues = "https://github.com/cherrypod/repo-scout/issues"
+
 [tool.setuptools]
 py-modules = ["cli", "config", "github_api", "patterns", "report", "scan_log", "scanner", "utils"]
 
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
 [project.scripts]
 repo-scout = "cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

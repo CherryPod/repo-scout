@@ -28,7 +28,7 @@ def main():
     )
     parser.add_argument(
         "--output", "-o",
-        help="Output directory for the report (default: ~/git-audits/reports/)",
+        help="Output directory for the report (default: ./reports/)",
     )
     parser.add_argument(
         "--token",

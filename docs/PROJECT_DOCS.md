@@ -126,7 +126,7 @@ All patterns as plain dicts with compiled regexes. Each dict has: `name`, `sever
 **Report sections:** Header → Verdict table → Repo metadata table → File tree summary → Findings grouped by severity (red flags first) with file location and matched text → Errors → Footer.
 
 ### scan_log.py — Append-Only Log
-Writes one-liner per scan to `~/git-audits/scan-log.md` in markdown table format:
+Writes one-liner per scan to `scan-log.md` (in the project directory) in markdown table format:
 ```
 | date | owner/repo | verdict | 2R/3W/5I | report path |
 ```
@@ -150,12 +150,12 @@ Creates the file with headers on first use.
 A quick scan uses ~4-5 API calls per repo (metadata, contributors, tree, plus priority file reads). A deep scan adds 1 more for the tarball download.
 
 ### Report Output
-- Default: `~/git-audits/reports/YYYY-MM-DD_owner_repo.md`
+- Default: `./reports/YYYY-MM-DD_owner_repo.md` (relative to where repo-scout is installed)
 - Custom: `repo-scout owner/repo --output ~/myproject/` writes to `~/myproject/reports/YYYY-MM-DD_owner_repo.md`
-- Scan log always writes to `~/git-audits/scan-log.md` regardless of output dir
+- Scan log always writes to `scan-log.md` in the project directory regardless of output dir
 
 ### safeclone Alias
-**Location:** `~/.bash_aliases` (sourced by `.bashrc`)
+**Setup:** Add the function from README.md to your shell config (e.g. `.bashrc` or `.bash_aliases`)
 **Usage:** `safeclone owner/repo [git clone args...]`
 
 Workflow:
@@ -185,4 +185,4 @@ These are expected and not bugs — the scanner correctly flags patterns that *c
 
 **No findings on quick scan but findings on deep scan** — Quick scan only reads priority files (package.json, setup.py, etc.). Deep scan reads every file. This is expected.
 
-**ModuleNotFoundError** — Make sure the venv is activated (`source .venv/bin/activate`) or use the full path (`~/git-audits/.venv/bin/repo-scout`).
+**ModuleNotFoundError** — Make sure the venv is activated (`source .venv/bin/activate`) or use the full path to the `repo-scout` entry point in your venv.

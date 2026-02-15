@@ -9,6 +9,11 @@ build/
 # Virtual environment
 .venv/
 
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
 # IDE
 .vscode/
 .idea/
